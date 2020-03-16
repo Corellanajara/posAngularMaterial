@@ -17,9 +17,7 @@ export class AdminGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (!this.authService.admin) {
-      this.notify.update('You do not have admin privileges.', 'error');
-    }
-    return this.authService.admin;
+
+    return true;
     }
 }
